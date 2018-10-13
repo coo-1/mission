@@ -4,7 +4,7 @@
 	
 int main()
 {
-		struct poke
+		struct poke//å®šä¹‰ä¸€å‰¯æ‰‘å…‹ç‰Œ
 	{
 		int a;
 		char color;
@@ -67,7 +67,7 @@ for(int i=13;i<26;i++)
 	{
 		order[i]=i+1;
 	}
-	for (int i=51;i>=1;i--)//Ï´ÅÆÆ÷
+	for (int i=51;i>=1;i--)//æ´—ç‰Œå™¨
 	{
 		srand(time(NULL));
 		int a=order[i];
@@ -90,7 +90,7 @@ for(int i=13;i<26;i++)
 	int j=0;
 	while(1)
 	{
-		printf("ÇëÍæ¼Ò1ÊäÈëÖ¸Áî:");
+		printf("è¯·çŽ©å®¶1è¾“å…¥æŒ‡ä»¤:");
 	
 		scanf("%d",&ch);
 		
@@ -98,9 +98,9 @@ for(int i=13;i<26;i++)
 		{
 			case 1:
 				player1[i]=poker[order[i]].a ;
-				printf("ÄúµÄÅÆÊÇ£º%c%d\n",poker[order[i]].color,poker[order[i]].a);
+				printf("æ‚¨çš„ç‰Œæ˜¯ï¼š%c%d\n",poker[order[i]].color,poker[order[i]].a);
 				sum1=sum1+poker[order[i]].a;
-				printf("ÄúµÄµãÊý£º%d\n",sum1);
+				printf("æ‚¨çš„ç‚¹æ•°ï¼š%d\n",sum1);
 				i++;
 				break; 
 			case 0:
@@ -117,7 +117,7 @@ for(int i=13;i<26;i++)
       
 
 		
-			printf("ÇëÍæ¼Ò2ÊäÈëÖ¸Áî:");
+			printf("è¯·çŽ©å®¶2è¾“å…¥æŒ‡ä»¤:");
 				// 
 			
 
@@ -126,9 +126,9 @@ for(int i=13;i<26;i++)
 			{
 				case 1:
 					player2[i]=poker[order[i]].a ;
-					printf("ÄúµÄÅÆÊÇ£º%c%d\n",poker[order[i]].color,poker[order[i]].a);
+					printf("æ‚¨çš„ç‰Œæ˜¯ï¼š%c%d\n",poker[order[i]].color,poker[order[i]].a);
 					sum2=sum2+poker[order[i]].a;
-					printf("ÄúµÄµãÊý£º%d\n",sum2);
+					printf("æ‚¨çš„ç‚¹æ•°ï¼š%d\n",sum2);
 					i++;
 					break; 
 				case 0:
@@ -143,11 +143,11 @@ for(int i=13;i<26;i++)
 			
 	}
 	if(sum1>sum2&&sum1<=21)
-	printf("Íæ¼Ò1Ê¤");
+	printf("çŽ©å®¶1èƒœ");
 	if(sum1<sum2&&sum2<=21) 
-	printf("Íæ¼Ò2Ê¤"); 
+	printf("çŽ©å®¶2èƒœ"); 
 	else
-	printf("Æ½ÊÖ") ;
+	printf("å¹³æ‰‹") ;
 	system("pause");
 		
 	

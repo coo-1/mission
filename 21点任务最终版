@@ -35,7 +35,8 @@ for(int i=13;i<26;i++)
 		poker[i].a=i-12;
 		poker[i].color=Mei;
 		if(i>=23)
-		poker[i].a=10;
+
+poker[i].a=10;
 		poker[i].color=Mei;
 		}
 	for(int i=26;i<39;i++)
@@ -75,8 +76,9 @@ for(int i=13;i<26;i++)
 		order[i]=order[b];
 		order[b]=a;
 	}
+	printf("游戏时发牌请输入1，停止要牌请输入0，游戏结束2\n")
 	
-	int player1[10]={0};
+	int player1[10]={0};//定义一个数组记牌
 	int player2[10]={0};
 	
 

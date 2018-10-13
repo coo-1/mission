@@ -1,0 +1,161 @@
+#include<stdio.h> 
+#include<stdlib.h>
+#include<time.h> 
+	
+int main()
+{
+		struct poke
+	{
+		int a;
+		char color;
+	};
+	poke poker[52];
+	char Tao='t';
+	char Xin='x';
+	char Mei='m';
+	char Fang='f';
+	for(int i=0;i<13;i++)
+	{
+	if(i==0)
+	poker[i].a=11;
+	poker[i].color=Tao;
+	if(i>0&&i<10)
+	poker[i].a=i+1;
+	poker[i].color=Tao;
+	if(i>=10)
+	poker[i].a=10;
+	poker[i].color=Tao;
+	}
+for(int i=13;i<26;i++)
+		{
+		if(i==13)
+		poker[i].a=11;
+		poker[i].color=Mei;
+		if(i>13&&i<23)
+		poker[i].a=i-12;
+		poker[i].color=Mei;
+		if(i>=23)
+		poker[i].a=10;
+		poker[i].color=Mei;
+		}
+	for(int i=26;i<39;i++)
+	{
+	if(i==26)
+	poker[i].a=11;
+	poker[i].color=Xin;
+	if(i>26&&i<36)
+	poker[i].a=i-25;
+	poker[i].color=Xin;
+	if(i>=36)
+	poker[i].a=10;
+	poker[i].color=Xin;
+	}	
+		for(int i=39;i<52;i++)
+	{
+		if(i==39)
+		poker[i].a=11;
+		poker[i].color=Fang;
+		if(i>39&&i<49)
+		poker[i].a=i-38;
+		poker[i].color=Fang;
+		if(i>=49)
+		poker[i].a=10;
+		poker[i].color=Fang;
+	}
+	int order[52]= {0};
+	for (int i=0;i<52;i++)
+	{
+		order[i]=i+1;
+	}
+	for (int i=51;i>=1;i--)//洗牌器
+	{
+		srand(time(NULL));
+		int a=order[i];
+		int b=rand()%i;
+		order[i]=order[b];
+		order[b]=a;
+	}
+	
+	int player1[10]={0};
+	int player2[10]={0};
+	
+
+	
+	int i=0;
+	int sum1=0;
+	int sum2=0;
+	int ch;
+	int dh;	
+
+	int j=0;
+	while(1)
+	{
+		printf("请玩家1输入指令:");
+	
+		scanf("%d",&ch);
+		
+		switch(ch)
+		{
+			case 1:
+				player1[i]=poker[order[i]].a ;
+				printf("您的牌是：%c%d\n",poker[order[i]].color,poker[order[i]].a);
+				sum1=sum1+poker[order[i]].a;
+				printf("您的点数：%d\n",sum1);
+				i++;
+				break; 
+			case 0:
+				break;
+			case 2:
+				j=1;
+				break;	
+		  }
+	
+
+		if(j==1)
+			break;
+			
+      
+
+		
+			printf("请玩家2输入指令:");
+				// 
+			
+
+	scanf("%d",&dh);
+			switch(dh)
+			{
+				case 1:
+					player2[i]=poker[order[i]].a ;
+					printf("您的牌是：%c%d\n",poker[order[i]].color,poker[order[i]].a);
+					sum2=sum2+poker[order[i]].a;
+					printf("您的点数：%d\n",sum2);
+					i++;
+					break; 
+				case 0:
+					break;
+				case 2:
+					j=1;
+					break;
+				
+			}
+				if(j==1)
+			break;
+			
+	}
+	if(sum1>sum2&&sum1<=21)
+	printf("玩家1胜");
+	if(sum1<sum2&&sum2<=21) 
+	printf("玩家2胜"); 
+	else
+	printf("平手") ;
+	system("pause");
+		
+	
+	
+}
+	 
+
+	
+	 
+
+
